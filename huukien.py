@@ -1,9 +1,18 @@
-import streamlit as st
 import pandas as pd
-import numpy as np
-st.title('Area')
-df = pd.DataFrame(
-    np.random.randn(40,4),
-    columns = ["C1","C2","C3","C4"]
-)
-st.line_chart(df)
+import matplotlib.pyplot as plt
+
+
+# reading the database
+data = pd.read_csv("tips.csv")
+
+# Scatter plot with day against tip
+plt.scatter(data['day'], data['tip'])
+
+# Adding Title to the Plot
+plt.title("Scatter Plot")
+
+# Setting the X and Y labels
+plt.xlabel('Day')
+plt.ylabel('Tip')
+
+plt.show()
